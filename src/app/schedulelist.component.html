@@ -1,0 +1,43 @@
+
+<h1>Schedules from {{from}} to {{to}}</h1>
+<h1 *ngIf="isEmptyResult">Sorry no schedules found from {{from}} to {{to}}</h1>
+<mat-progress-bar mode="indeterminate" *ngIf="isScheduleLoading"></mat-progress-bar>
+
+<div class="mat-elevation-z8 grid-style" [hidden] = "(isScheduleLoading || isEmptyResult)" >
+      <table mat-table [dataSource]="dataSource" >
+  
+        <!-- Position Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> ID. </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+            <!-- Name Column -->
+         <ng-container matColumnDef="carrier">
+           <th mat-header-cell *matHeaderCellDef> Carrier </th>
+           <td mat-cell *matCellDef="let element"> {{element.carrier.name}} </td>
+         </ng-container>
+         <!-- Name Column -->
+        <ng-container matColumnDef="vessel">
+          <th mat-header-cell *matHeaderCellDef> Vessel </th>
+          <td mat-cell *matCellDef="let element"> {{element.vessel.name}} </td>
+        </ng-container>
+        <!-- Name Column -->
+        <ng-container matColumnDef="productType">
+          <th mat-header-cell *matHeaderCellDef> ProductType </th>
+          <td mat-cell *matCellDef="let element"> {{element.productType}} </td>
+        </ng-container>
+        <!-- Weight Column -->
+        <ng-container matColumnDef="eta">
+          <th mat-header-cell *matHeaderCellDef> ETA </th>
+          <td mat-cell *matCellDef="let element"> {{element.eta | date:'medium'}} </td>
+        </ng-container>
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="etd">
+          <th mat-header-cell *matHeaderCellDef> ETD </th>
+          <td mat-cell *matCellDef="let element"> {{element.etd | date:'medium'}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[10, 20]" showFirstLastButtons ></mat-paginator>  
+</div>

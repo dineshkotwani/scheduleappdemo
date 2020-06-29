@@ -1,0 +1,15 @@
+.nav-link {
+  font-size: large;
+}
+
+
+
+.divider-card{
+  display: block;
+    margin: 0;
+    border-top-width: 5px;
+    border-top-style: solid;
+    /* color: black; */
+    border-color: #9c27b0;
+}
+

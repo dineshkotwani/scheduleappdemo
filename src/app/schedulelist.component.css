@@ -1,0 +1,13 @@
+table {
+    width: 100%;
+  }
+ 
+ .grid-style {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+ }
+
+ h1{
+     text-align: center;
+ }

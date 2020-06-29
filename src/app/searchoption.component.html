@@ -1,0 +1,21 @@
+<mat-card class="example-card">
+
+  <mat-card-content>
+    <div class="search-group">
+      <div>
+        <label>Origin</label>
+        <location-selector (countryEmitter)="setOriginCountry($event)" (portEmitter)="setOriginPort($event)">
+        </location-selector>
+      </div>
+      <mat-divider [vertical]="true" class="vertical-divider"></mat-divider>
+      <div>
+        <label>Destination</label>
+        <location-selector (countryEmitter)="setDestCountry($event)" (portEmitter)="setDestPort($event)">
+        </location-selector>
+      </div>
+    </div>
+
+    <button mat-raised-button color="primary" (click)="validateSearchOptions('/scheduleList')" class="search-button">Search</button>
+  </mat-card-content>
+
+</mat-card>

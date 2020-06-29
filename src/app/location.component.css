@@ -1,0 +1,17 @@
+.example-radio-group {
+    display: flex;
+    flex-direction: row;
+    margin: 15px 0;
+  }
+  
+  .example-radio-button {
+    margin-left: 25%;
+    margin-top: 10%;
+  }
+
+
+  .search-group {
+    display: flex;
+    flex-direction: row;
+    margin: 15px 0;
+  }

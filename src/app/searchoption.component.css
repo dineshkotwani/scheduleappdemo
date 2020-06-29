@@ -1,0 +1,52 @@
+.example-radio-group {
+    display: flex;
+    flex-direction: row;
+    margin: 15px 0;
+  }
+  
+  .example-radio-button {
+    margin-left: 25%;
+    margin-top: 10%;
+  }
+  .divider-card{
+    display: block;
+      margin: 0;
+      border-top-width: 5px;
+      border-top-style: solid;
+      /* color: black; */
+      border-color: #9c27b0;
+  }
+
+  .vertical-divider{
+    border-top: 0;
+    border-right-width: 5px;
+    border-right-style: solid;
+    border-color: #9c27b0;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+
+  .search-group {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10%;
+    margin-top:10%;
+
+  }
+
+  .search-button{
+    background-color: #9c27b0;
+    width: 100px;
+    height:50px;
+    margin-top:30%;
+
+  }
+  .example-card {
+    margin-left: 25%;
+    text-align: center;
+    background-color: white;
+    color: black;
+    height: 600px;
+    width: 800px;
+  }

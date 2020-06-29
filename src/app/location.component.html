@@ -1,0 +1,40 @@
+
+<div >
+    <mat-progress-bar mode="indeterminate" *ngIf="!countryVisible"></mat-progress-bar>
+    <form class="example-form"  *ngIf="countryVisible">
+        <label id="origin-label">Select Country :</label>
+        <mat-form-field class="example-full-width" >
+          <input matInput type="text"
+                 aria-label="origin"
+                 aria-labelledby="origin-label"
+                 matInput
+                 [formControl]="countryControl"
+                 [matAutocomplete]="auto">
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="onCountrySelected($event)" [displayWith]="displayFn">
+            <mat-option *ngFor="let originoption of filteredOptionsCountries | async" [value]="originoption">
+              {{originoption.name}}
+            </mat-option>
+          </mat-autocomplete>
+    
+        </mat-form-field>
+        <mat-progress-bar mode="indeterminate" *ngIf="isPortsLoading"></mat-progress-bar>
+        <div *ngIf="portsVisible">
+            <label id="destination-label">Select Port :</label>
+            <mat-form-field class="example-full-width" >
+              <input matInput type="text"
+                     aria-label="destination"
+                     aria-labelledby="destination-label"
+                     matInput
+                     [formControl]="portControl"
+                     [matAutocomplete]="auto1">
+              <mat-autocomplete autoActiveFirstOption #auto1="matAutocomplete" (optionSelected)="onPortSelected($event)" [displayWith]="displayFn">
+                <mat-option *ngFor="let destoption of filteredOptionsPorts | async" [value]="destoption">
+                  {{destoption.name}}
+                </mat-option>
+              </mat-autocomplete>
+        
+            </mat-form-field>
+        </div>
+       
+    </form>
+    </div>
